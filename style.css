@@ -1,14 +1,18 @@
 :root {
   --navy: #123a6d;
   --navy-dark: #0c2b4d;
+  --navy-soft: #1d4f93;
   --gold: #c9a646;
   --gold-soft: #f7efd7;
+  --gold-line: #e7c770;
   --white: #ffffff;
   --bg: #eef3f8;
   --text: #1f2937;
   --muted: #6b7280;
   --card: #f8fbff;
+  --line: #d7e2ee;
   --shadow: 0 10px 28px rgba(18, 58, 109, 0.12);
+  --soft-shadow: 0 4px 14px rgba(18, 58, 109, 0.08);
 }
 
 * {
@@ -22,11 +26,14 @@ body {
 }
 
 body {
-  font-family: "Sarabun", "TH Sarabun New", sans-serif;
+  font-family: "TH Sarabun PK", "TH Sarabun New", "Sarabun", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
   background: var(--bg);
   color: var(--text);
 }
 
+/* ===================== TOP BAR ===================== */
 .topbar {
   background: linear-gradient(135deg, var(--navy), var(--navy-dark));
   color: var(--white);
@@ -39,13 +46,14 @@ body {
 
 .topbar h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
+  line-height: 1.05;
 }
 
 .topbar-sub {
-  margin: 6px 0 0;
-  opacity: 0.9;
-  font-size: 14px;
+  margin: 4px 0 0;
+  opacity: 0.92;
+  font-size: 16px;
 }
 
 .topbar-actions {
@@ -57,12 +65,14 @@ body {
 .btn {
   border: none;
   border-radius: 10px;
-  padding: 10px 16px;
+  padding: 8px 14px;
   cursor: pointer;
-  font-size: 15px;
+  font-family: "TH Sarabun PK", "TH Sarabun New", "Sarabun", sans-serif;
+  font-size: 16px;
   font-weight: 700;
   background: #ffffff;
   color: var(--navy);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .btn.primary {
@@ -80,6 +90,7 @@ body {
   cursor: wait;
 }
 
+/* ===================== LAYOUT ===================== */
 .container {
   max-width: 1440px;
   margin: 22px auto;
@@ -98,10 +109,13 @@ body {
 
 .panel h2 {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   color: var(--navy);
+  font-size: 24px;
+  line-height: 1.05;
 }
 
+/* ===================== FORM ===================== */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -111,7 +125,7 @@ body {
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .field.full {
@@ -119,7 +133,7 @@ body {
 }
 
 label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
 }
@@ -130,23 +144,26 @@ textarea {
   width: 100%;
   border: 1px solid #cfd8e3;
   border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 14px;
+  padding: 8px 10px;
+  font-family: "TH Sarabun PK", "TH Sarabun New", "Sarabun", sans-serif;
+  font-size: 16px;
+  line-height: 1.15;
   background: #ffffff;
 }
 
 textarea {
-  min-height: 74px;
+  min-height: 76px;
   resize: vertical;
 }
 
 .form-note {
-  margin-top: 12px;
-  font-size: 12px;
+  margin-top: 10px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.2;
 }
 
+/* ===================== A4 ===================== */
 .a4-wrap {
   display: flex;
   justify-content: center;
@@ -160,29 +177,35 @@ textarea {
 }
 
 .report {
-  padding: 8mm;
+  padding: 7mm;
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(201, 166, 70, 0.06), transparent 24%),
+    radial-gradient(circle at bottom left, rgba(18, 58, 109, 0.05), transparent 22%),
+    #ffffff;
 }
 
 .report::before {
   content: "";
   position: absolute;
   inset: 0;
-  border: 5px solid rgba(201, 166, 70, 0.12);
+  border: 4px solid rgba(201, 166, 70, 0.11);
   pointer-events: none;
 }
 
+/* ===================== HEADER ===================== */
 .report-header {
   display: grid;
-  grid-template-columns: 115px 1fr 210px;
+  grid-template-columns: 100px 1fr 205px;
   gap: 10px;
-  align-items: start;
-  background: linear-gradient(135deg, var(--navy), #1a4f92);
+  align-items: stretch;
+  background: linear-gradient(135deg, var(--navy), var(--navy-soft));
   color: white;
-  border-radius: 14px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: var(--soft-shadow);
 }
 
 .logo-side {
@@ -193,15 +216,15 @@ textarea {
 }
 
 .top-motto {
-  display: block;
   width: 100%;
   text-align: center;
   background: rgba(255, 255, 255, 0.16);
-  padding: 6px 8px;
-  border-radius: 12px;
-  font-size: 11px;
+  padding: 5px 6px;
+  border-radius: 999px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.05;
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .logo-block {
@@ -210,85 +233,73 @@ textarea {
   justify-content: center;
 }
 
-.logo-img,
-.trainee-photo-frame img,
-.admin-photo-frame img,
-.certificate-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .logo-img {
   width: 62px;
   height: 62px;
   border-radius: 50%;
   border: 3px solid rgba(255, 255, 255, 0.35);
   background: white;
-}
-
-.logo-placeholder {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  background: white;
-  color: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
 }
 
 .header-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding-top: 6px;
 }
 
+/* ขยายข้อความส่วนหัวตามที่ขอ */
 .mini-title {
-  font-size: 11px;
-  letter-spacing: 1px;
-  opacity: 0.9;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  opacity: 0.95;
+  line-height: 1.05;
+  font-weight: 700;
 }
 
 .header-center h2 {
-  margin: 2px 0 4px;
-  font-size: 27px;
-  line-height: 1.1;
+  margin: 6px 0 4px;
+  font-size: 32px;
+  line-height: 1.02;
+  font-weight: 700;
 }
 
 .header-subtitle {
-  font-size: 13px;
-  opacity: 0.95;
+  font-size: 20px;
+  opacity: 0.98;
+  line-height: 1.05;
+  font-weight: 700;
 }
 
 .header-right {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 8px;
-  align-items: flex-end;
 }
 
 .admin-card {
-  width: 100%;
   display: grid;
-  grid-template-columns: 38px 1fr;
-  gap: 7px;
+  grid-template-columns: 40px 1fr;
+  gap: 8px;
   align-items: center;
   background: rgba(255, 255, 255, 0.98);
   color: var(--navy);
-  padding: 4px 7px;
-  border-radius: 9px;
+  padding: 5px 7px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .deputy-card {
-  margin-top: 4px;
+  margin-top: 2px;
 }
 
 .admin-photo-frame {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   overflow: hidden;
   background: #e8eef6;
   border: 1px solid #d7e2ee;
@@ -297,69 +308,83 @@ textarea {
   justify-content: center;
 }
 
-.admin-placeholder {
-  font-size: 10px;
-  color: var(--muted);
-  font-weight: 700;
-  text-align: center;
+.admin-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .admin-name {
-  font-size: 10.5px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.05;
 }
 
 .admin-role {
-  font-size: 9.5px;
+  font-size: 16px;
   color: #4b5563;
+  line-height: 1.05;
 }
 
+/* ===================== PROFILE + SUMMARY ===================== */
 .main-top-grid {
   display: grid;
-  grid-template-columns: 145px 1fr;
-  gap: 8px;
-  margin-bottom: 8px;
+  grid-template-columns: 132px 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: stretch;
 }
 
 .trainee-card {
-  border: 1px solid #d9e2ec;
-  border-radius: 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
   background: linear-gradient(180deg, #ffffff, #f8fbff);
   text-align: center;
-  padding: 10px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--soft-shadow);
 }
 
 .trainee-photo-frame {
   width: 100%;
-  height: 132px;
+  height: 122px;
   overflow: hidden;
-  border-radius: 12px;
-  background: #eef4fa;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #eef4fa, #f9fbfe);
   border: 1px solid #d8e3ef;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.trainee-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .photo-placeholder {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
 }
 
 .person-name {
   margin-top: 8px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  line-height: 1.25;
+  line-height: 1.05;
 }
 
 .person-role {
-  margin-top: 3px;
-  font-size: 12px;
+  margin-top: 2px;
+  font-size: 16px;
   color: var(--muted);
+  line-height: 1.05;
 }
 
 .title-side {
@@ -370,79 +395,91 @@ textarea {
 
 .report-title-box {
   display: grid;
-  grid-template-columns: 46px 1fr;
-  gap: 10px;
+  grid-template-columns: 42px 1fr;
+  gap: 8px;
   align-items: center;
   background: linear-gradient(90deg, #f7faff, #ffffff);
   border: 1px solid #d9e4ef;
   border-left: 5px solid var(--gold);
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 9px 10px;
+  min-height: 54px;
+  box-shadow: var(--soft-shadow);
 }
 
 .title-icon {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: var(--gold-soft);
+  background: linear-gradient(180deg, #f8f1de, #efe0b1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 20px;
+  color: #9a7400;
 }
 
 .title-content .label {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
+  line-height: 1.05;
 }
 
 .title-content h3 {
-  margin: 3px 0 0;
-  font-size: 20px;
+  margin: 2px 0 0;
+  font-size: 24px;
   color: var(--navy-dark);
-  line-height: 1.3;
+  line-height: 1.05;
 }
 
+/* ===================== INFO GRID ===================== */
 .info-grid.compact {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 6px;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 
 .info-card {
-  background: var(--card);
-  border: 1px solid #d7e2ee;
-  border-radius: 10px;
-  padding: 8px 10px;
-  min-height: 68px;
+  background: linear-gradient(180deg, #fbfdff, #f4f8fc);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 9px 10px;
+  min-height: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-shadow: var(--soft-shadow);
 }
 
 .info-head {
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
+  line-height: 1.05;
 }
 
 .info-value {
-  font-size: 12px;
-  line-height: 1.35;
+  font-size: 16px;
+  line-height: 1.12;
   word-break: break-word;
 }
 
+/* ===================== DETAIL ===================== */
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;
-  margin-bottom: 6px;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 .detail-card {
   background: #ffffff;
-  border: 1px solid #d7e2ee;
-  border-radius: 10px;
-  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: var(--soft-shadow);
 }
 
 .gold-card {
@@ -451,55 +488,75 @@ textarea {
 }
 
 .detail-head {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+  line-height: 1.05;
 }
 
 .detail-body {
-  font-size: 12px;
-  line-height: 1.45;
+  font-size: 16px;
+  line-height: 1.18;
   white-space: pre-wrap;
   color: var(--text);
+  min-height: 30px;
 }
 
+/* ===================== CERTIFICATE (ใหม่) ===================== */
 .certificate-section {
-  margin-top: 4px;
+  margin-top: 10px;
 }
 
 .certificate-box {
-  border: 1px dashed #c8d3df;
-  border-radius: 10px;
-  background: #fafcff;
-  padding: 6px;
-  height: 115px;
+  position: relative;
+  border-radius: 18px;
+  height: 300px; /* 🔥 ขยายใหญ่ขึ้น */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
+/* 🔥 พื้นที่วางใบเกียรติบัตร */
+.certificate-box::after {
+  content: "";
+  position: absolute;
+  inset: 40px 35px; /* 🔥 เว้นขอบตามภาพ */
+  background: #ffffff;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+/* 🔥 รูปเกียรติบัตร */
 .certificate-box img {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
   object-fit: contain;
+  position: relative;
+  z-index: 4;
 }
 
+/* ข้อความ placeholder */
 .certificate-placeholder {
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 600;
+  color: #888;
+  font-size: 16px;
+  position: relative;
+  z-index: 4;
 }
 
+/* ===================== FOOTER ===================== */
 .report-footer {
-  margin-top: 6px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: var(--gold-soft);
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f7efd7, #f3e7c3);
   color: #5f4a10;
-  font-size: 10.5px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.08;
+  box-shadow: var(--soft-shadow);
 }
 
 .footer-note {
@@ -521,6 +578,8 @@ textarea {
   gap: 6px;
   font-weight: 700;
   white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.05;
 }
 
 .credit-icon {
@@ -543,6 +602,7 @@ textarea {
   display: none !important;
 }
 
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 1200px) {
   .container {
     grid-template-columns: 1fr;
@@ -579,6 +639,7 @@ textarea {
   }
 }
 
+/* ===================== PRINT ===================== */
 @page {
   size: A4 portrait;
   margin: 0;
@@ -644,188 +705,115 @@ textarea {
     border-width: 3px !important;
   }
 
-  .report-header {
-    grid-template-columns: 105px 1fr 185px;
-    gap: 8px;
-    padding: 8px 10px;
-    margin-bottom: 6px;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  .top-motto {
-    font-size: 10px;
-    padding: 4px 6px;
-  }
-
-  .logo-img,
-  .logo-placeholder {
-    width: 54px;
-    height: 54px;
-  }
-
-  .header-center h2 {
-    font-size: 24px;
-  }
-
-  .mini-title {
-    font-size: 10px;
-  }
-
-  .header-subtitle {
-    font-size: 11px;
-  }
-
-  .admin-card {
-    grid-template-columns: 34px 1fr;
-    padding: 4px 6px;
-    gap: 6px;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  .admin-photo-frame {
-    width: 34px;
-    height: 34px;
-  }
-
-  .admin-name {
-    font-size: 9.8px;
-  }
-
-  .admin-role {
-    font-size: 8.8px;
-  }
-
-  .main-top-grid {
-    grid-template-columns: 130px 1fr;
-    gap: 6px;
-    margin-bottom: 6px;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  .trainee-card,
+  .report-header,
+  .main-top-grid,
   .report-title-box,
   .info-grid,
   .detail-grid,
   .detail-card,
   .certificate-section,
   .report-footer,
+  .trainee-card,
   .info-card {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
 
-  .trainee-card {
-    padding: 8px;
-  }
-
-  .trainee-photo-frame {
-    height: 110px;
-  }
-
-  .person-name {
-    margin-top: 6px;
-    font-size: 13px;
-  }
-
-  .person-role {
-    font-size: 10px;
-  }
-
-  .title-side {
-    gap: 6px;
-  }
-
-  .report-title-box {
+  .report-header {
+    grid-template-columns: 98px 1fr 190px;
+    gap: 8px;
     padding: 8px 10px;
+    margin-bottom: 8px;
   }
 
-  .title-icon {
-    width: 40px;
-    height: 40px;
+  .top-motto {
+    font-size: 15px;
+    padding: 4px 6px;
+  }
+
+  .logo-img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .mini-title {
+    font-size: 16px;
+  }
+
+  .header-center h2 {
+    font-size: 28px;
+  }
+
+  .header-subtitle {
     font-size: 18px;
   }
 
-  .title-content .label {
-    font-size: 11px;
+  .admin-card {
+    grid-template-columns: 36px 1fr;
+    padding: 5px 6px;
+    gap: 6px;
   }
 
-  .title-content h3 {
-    font-size: 17px;
-    line-height: 1.2;
+  .admin-photo-frame {
+    width: 36px;
+    height: 36px;
+  }
+
+  .main-top-grid {
+    grid-template-columns: 122px 1fr;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .trainee-photo-frame {
+    height: 108px;
   }
 
   .info-grid.compact {
-    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
   }
 
   .info-card {
-    min-height: 58px;
-    padding: 7px 8px;
-  }
-
-  .info-head {
-    font-size: 10px;
-  }
-
-  .info-value {
-    font-size: 11px;
-    line-height: 1.25;
+    min-height: 60px;
+    padding: 12px 13px;
   }
 
   .detail-grid {
-    gap: 5px;
-    margin-bottom: 5px;
+    gap: 7px;
+    margin-bottom: 7px;
   }
 
   .detail-card {
-    padding: 7px 8px;
-  }
-
-  .detail-head {
-    font-size: 12px;
+    padding: 13px 14px;
   }
 
   .detail-body {
-    font-size: 11px;
-    line-height: 1.3;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
   #p_objective {
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
   }
 
   #p_summary {
-    -webkit-line-clamp: 4;
-  }
-
-  #p_benefit {
     -webkit-line-clamp: 3;
   }
 
-  .certificate-section {
-    margin-top: 3px;
+  #p_benefit {
+    -webkit-line-clamp: 2;
   }
 
   .certificate-box {
-    height: 90px;
-    padding: 4px;
-  }
-
-  .certificate-placeholder {
-    font-size: 11px;
+    height: 350px;
+    padding: 18px;
   }
 
   .report-footer {
-    margin-top: 4px;
-    padding: 5px 8px;
-    font-size: 9.5px;
-    line-height: 1.25;
+    margin-top: 6px;
+    padding: 6px 8px;
   }
 
   .footer-note {
@@ -834,20 +822,5 @@ textarea {
 
   .footer-credit-row {
     gap: 12px;
-  }
-
-  .credit-item {
-    font-size: 9.5px;
-  }
-
-  .credit-icon {
-    width: 12px;
-    height: 12px;
-    flex-basis: 12px;
-  }
-
-  .credit-icon svg {
-    width: 12px;
-    height: 12px;
   }
 }

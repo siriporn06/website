@@ -8,10 +8,6 @@
 </head>
 <body>
   <div class="topbar no-print">
-    <div>
-      <h1>ระบบบันทึกข้อมูลการอบรม</h1>
-      <p class="topbar-sub">เชื่อม Google Sheets และสร้างอินโฟกราฟิกอัตโนมัติ</p>
-    </div>
 
     <div class="topbar-actions">
       <button type="button" class="btn" onclick="clearForm()">ล้างข้อมูล</button>
@@ -93,21 +89,6 @@
         </div>
 
         <div class="field full">
-          <label for="schoolLogo">ลิงก์โลโก้โรงเรียน</label>
-          <input id="schoolLogo" type="url" placeholder="https://...">
-        </div>
-
-        <div class="field">
-          <label for="directorPhoto">ลิงก์รูป นายอิทธิพัทธ์ พุฒตาล</label>
-          <input id="directorPhoto" type="url" placeholder="https://...">
-        </div>
-
-        <div class="field">
-          <label for="deputyPhoto">ลิงก์รูป นางสาวสุจินต์ จันดากุล</label>
-          <input id="deputyPhoto" type="url" placeholder="https://...">
-        </div>
-
-        <div class="field full">
           <label for="traineePhotoFile">รูปผู้เข้าอบรม (แนบจากโทรศัพท์/คอมพิวเตอร์)</label>
           <input id="traineePhotoFile" type="file" accept="image/*">
         </div>
@@ -118,9 +99,6 @@
         </div>
       </div>
 
-      <div class="form-note">
-        หมายเหตุ: โลโก้โรงเรียน / รูป ผอ. / รูปรองผอ. ใช้เป็นลิงก์รูปภาพ ส่วนรูปผู้เข้าอบรมและเกียรติบัตรแนบจากอุปกรณ์โดยตรง
-      </div>
     </section>
 
     <!-- อินโฟกราฟิก A4 -->
@@ -131,8 +109,7 @@
             <div class="school-motto top-motto" id="p_school_motto">เรียนดี มีคุณธรรม</div>
 
             <div class="logo-block">
-              <img id="p_logo_img" class="logo-img hidden" alt="โลโก้โรงเรียน">
-              <div id="p_logo_placeholder" class="logo-placeholder">LOGO</div>
+              <img src="images/logo.png" alt="โลโก้โรงเรียน" class="logo-img">
             </div>
           </div>
 
@@ -145,8 +122,7 @@
           <div class="header-right">
             <div class="admin-card">
               <div class="admin-photo-frame">
-                <img id="p_director_img" class="hidden" alt="ผู้อำนวยการโรงเรียน">
-                <div id="p_director_placeholder" class="admin-placeholder">รูป ผอ.</div>
+                <img src="images/director.jpg" alt="ผู้อำนวยการโรงเรียน">
               </div>
               <div class="admin-text">
                 <div class="admin-name">นายอิทธิพัทธ์ พุฒตาล</div>
@@ -156,8 +132,7 @@
 
             <div class="admin-card deputy-card">
               <div class="admin-photo-frame">
-                <img id="p_deputy_img" class="hidden" alt="รองผู้อำนวยการโรงเรียน">
-                <div id="p_deputy_placeholder" class="admin-placeholder">รูป รองผอ.</div>
+                <img src="images/deputy.jpg" alt="รองผู้อำนวยการโรงเรียน">
               </div>
               <div class="admin-text">
                 <div class="admin-name">นางสาวสุจินต์ จันดากุล</div>
@@ -246,9 +221,6 @@
         </section>
 
         <footer class="report-footer">
-          <div class="footer-note">
-            เอกสารฉบับนี้ออกแบบสำหรับการพิมพ์ A4 แนวตั้ง และเผยแพร่ออนไลน์ในรูปแบบอินโฟกราฟิกทางการ
-          </div>
 
           <div class="footer-credit-row">
             <div class="credit-item">
@@ -257,7 +229,7 @@
                   <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.98 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                 </svg>
               </span>
-              <span>cr from กลุ่มบริหารงานบุคคล</span>
+              <span>กลุ่มบริหารงานบุคคล</span>
             </div>
 
             <div class="credit-item">
@@ -275,7 +247,7 @@
   </div>
 
   <script>
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxnY8RsHFcqBbK04pXJjdji4MHiEdF24Ygkhoiwce7BHoP9qXFAp5KYPPLRFogqddjnCg/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcT1K2yNjV4shTyOZiSL5jR61Wgmgxa2XlZMMJNKypqhcDIS5uvQTXRSiNkkrKDodYqQ/exec";
 
     const fields = {
       title: document.getElementById("title"),
@@ -289,9 +261,6 @@
       summary: document.getElementById("summary"),
       benefit: document.getElementById("benefit"),
       schoolMotto: document.getElementById("schoolMotto"),
-      schoolLogo: document.getElementById("schoolLogo"),
-      directorPhoto: document.getElementById("directorPhoto"),
-      deputyPhoto: document.getElementById("deputyPhoto"),
       traineePhotoFile: document.getElementById("traineePhotoFile"),
       certificateFile: document.getElementById("certificateFile")
     };
@@ -308,25 +277,6 @@
         "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
       ];
       return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear() + 543}`;
-    }
-
-    function setImageByUrl(url, imgId, placeholderId) {
-      const img = document.getElementById(imgId);
-      const placeholder = document.getElementById(placeholderId);
-
-      if (url && url.trim() !== "") {
-        img.src = url.trim();
-        img.classList.remove("hidden");
-        if (placeholder) placeholder.classList.add("hidden");
-
-        img.onerror = function () {
-          img.classList.add("hidden");
-          if (placeholder) placeholder.classList.remove("hidden");
-        };
-      } else {
-        img.classList.add("hidden");
-        if (placeholder) placeholder.classList.remove("hidden");
-      }
     }
 
     function setImageByData(dataUrl, imgId, placeholderId) {
@@ -358,9 +308,6 @@
       document.getElementById("p_benefit").innerText = fields.benefit.value || "-";
       document.getElementById("p_school_motto").innerText = fields.schoolMotto.value || "เรียนดี มีคุณธรรม";
 
-      setImageByUrl(fields.schoolLogo.value, "p_logo_img", "p_logo_placeholder");
-      setImageByUrl(fields.directorPhoto.value, "p_director_img", "p_director_placeholder");
-      setImageByUrl(fields.deputyPhoto.value, "p_deputy_img", "p_deputy_placeholder");
       setImageByData(traineePhotoData, "p_trainee_img", "p_trainee_placeholder");
       setImageByData(certificateData, "p_certificate_img", "p_certificate_placeholder");
     }
@@ -420,9 +367,6 @@
         summary: fields.summary.value.trim(),
         benefit: fields.benefit.value.trim(),
         schoolMotto: fields.schoolMotto.value.trim(),
-        schoolLogo: fields.schoolLogo.value.trim(),
-        directorPhoto: fields.directorPhoto.value.trim(),
-        deputyPhoto: fields.deputyPhoto.value.trim(),
         traineePhotoData: traineePhotoData,
         certificateData: certificateData,
         certificateFileName: certificateFileName
